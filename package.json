@@ -1,0 +1,28 @@
+{
+  "name": "ipajs",
+  "version": "1.0.0",
+  "description": "Transforms X-SAMPA notation into Unicode IPA characters",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "nodemon --exec 'mocha ./tests/*.spec.js || exit 1'"
+  },
+  "keywords": [
+    "linguistics",
+    "phonetics",
+    "ipa",
+    "xsampa",
+    "sampa"
+  ],
+  "author": "William J. Denny <will@wjdenny.com>",
+  "license": "CC-BY-NC-SA-4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wjdenny/ipajs.git"
+  },
+  "devDependencies": {
+    "chai": "^5.0.3",
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.3"
+  }
+}
