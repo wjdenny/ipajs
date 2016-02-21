@@ -1,5 +1,5 @@
 {
-  "predef": [  ],
+  "predef": [ "describe", "it", "beforeEach", "before", "after"],
   "adsafe":     false,
   "safe":       false,
   "bitwise":    false,
