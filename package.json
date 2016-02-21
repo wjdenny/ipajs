@@ -4,7 +4,7 @@
   "description": "Transforms X-SAMPA or Kirshenbaum notation into Unicode IPA characters",
   "main": "index.js",
   "scripts": {
-    "pretest": "jslint ./**/*.js",
+    "pretest": "jshint ./**/*.js",
     "test": "mocha ./tests/*.js",
     "watch": "watch 'npm test'"
   },
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "chai": "3.5.0",
+    "jshint": "2.9.1",
     "mocha": "2.4.5"
   }
 }
