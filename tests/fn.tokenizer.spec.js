@@ -16,7 +16,7 @@ describe('tokenizer', function () {
   });
 
   it('should separate base characters and following modifiers into array elements', function () {
-    expect(tokenizer('a\\b`c_<d_>f~g=h_a')).to.have.length.of(7);
+    expect(tokenizer('a\\b`c_<d_>f~g=h_ai_0')).to.have.length.of(8);
   });
 
 });

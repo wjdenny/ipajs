@@ -3,87 +3,60 @@ module.exports = function (input) {
     throw new TypeError('ipa.js expected string as input');
   }
 
-  var i = -1, base, mod, result = [];
-  while (i++ < input.length) {
-    if (input[i+1] === '\\') {
-      base = input.substr(i,2);
-      if (input[i+2] === '_') {
-        mod = input.substr(i+2,2);
-      }
-    }
+  var tokenizer = require('./fn.tokenizer');
 
-    else if (input[i+1] === '`') {
-      base = input.substr(i,2);
-    }
+  tokens = tokenizer(input);
 
-    else {
-      base = input.substr(i,1);
-      if (input[i+1] === '_') {
-        mod = input.substr(i+1,2);
-      }
+  tokens = tokens.map(function (e) {
+    switch (e) {
+      case 'b_<': return '\u0253';
+      case 'd_<': return '\u0257';
+      case 'd`': return '\u0256';
+      case 'g_<': return '\u0261';
+      case 'A': return '\u0251';
+      case 'B': return '\u03B2';
+      case 'B\\': return '\u0299';
+      case 'G': return '\u0263';
+      case 'G\\_<': return '\u029B';
+      case 'G\\': return '\u0262';
+      case 'H\\': return '\u029C';
+      case 'I\\': return '\u1D7B';
+      case 'J\\_<': return '\u0284';
+      case 'J\\': return '\u025F';
+      case 'K\\': return '\u026E';
+      case 'L\\': return '\u029F';
+      case 'M\\': return '\u0270';
+      case 'N\\': return '\u0274';
+      case 'O\\': return '\u0298';
+      case 'R\\': return '\u0280';
+      case 'U\\': return '\u1D7F';
+      case 'X\\': return '\u0127';
+      case 'C': return '\u00E7';
+      case 'D': return '\u00F0';
+      case 'E': return '\u025B';
+      case 'F': return '\u0271';
+      case 'H': return '\u0265';
+      case 'I': return '\u026A';
+      case 'J': return '\u0272';
+      case 'K': return '\u026C';
+      case 'L': return '\u028E';
+      case 'M': return '\u026F';
+      case 'N': return '\u014B';
+      case 'O': return '\u0254';
+      case 'P': return '\u028B';
+      case 'Q': return '\u0252';
+      case 'R': return '\u0281';
+      case 'S': return '\u0283';
+      case 'T': return '\u03B8';
+      case 'U': return '\u028A';
+      case 'V': return '\u028C';
+      case 'W': return '\u028D';
+      case 'X': return '\u03C7';
+      case 'Y': return '\u028F';
+      case 'Z': return '\u0292';
+      default: return e;
     }
+  });
 
-    switch (base) {
-      case 'b':
-        if (mod === "_<") { result.push('\u0253'); i=i+3; }
-        else { result.push('b'); }
-        break;
-      case 'd':
-        if (mod === "_<") { result.push('\u0257'); i=i+3; }
-        else { result.push('d'); }
-        break;
-      case 'd`': result.push('\u0256'); i=i+2; break;
-      case 'g':
-        if (mod === "_<") { result.push('\u0261'); i=i+3; }
-        else { result.push('g'); }
-        break;
-      case 'B\\': result.push('\u0299'); i++; break;
-      case 'G\\':
-          if (mod === "_<") { result.push('\u029B'); i=i+3; }
-          else { result.push('\u0262'); i++; }
-          break;
-      case 'H\\': result.push('\u029C'); i++; break;
-      case 'I\\': result.push('\u1D7B'); i++; break;
-      case 'J\\':
-        if (mod === "_<") { result.push('\u0284'); i=i+3; }
-        else { result.push('\u025F'); i++; }
-        break;
-      case 'K\\': result.push('\u026E'); i++; break;
-      case 'L\\': result.push('\u029F'); i++; break;
-      case 'M\\': result.push('\u0270'); i++; break;
-      case 'N\\': result.push('\u0274'); i++; break;
-      case 'O\\': result.push('\u0298'); i++; break;
-      case 'R\\': result.push('\u0280'); i++; break;
-      case 'U\\': result.push('\u1D7F'); i++; break;
-      case 'X\\': result.push('\u0127'); i++; break;
-      case 'A': result.push('\u0251'); break;
-      case 'B': result.push('\u03B2'); break;
-      case 'C': result.push('\u00E7'); break;
-      case 'D': result.push('\u00F0'); break;
-      case 'E': result.push('\u025B'); break;
-      case 'F': result.push('\u0271'); break;
-      case 'G': result.push('\u0263'); break;
-      case 'H': result.push('\u0265'); break;
-      case 'I': result.push('\u026A'); break;
-      case 'J': result.push('\u0272'); break;
-      case 'K': result.push('\u026C'); break;
-      case 'L': result.push('\u028E'); break;
-      case 'M': result.push('\u026F'); break;
-      case 'N': result.push('\u014B'); break;
-      case 'O': result.push('\u0254'); break;
-      case 'P': result.push('\u028B'); break;
-      case 'Q': result.push('\u0252'); break;
-      case 'R': result.push('\u0281'); break;
-      case 'S': result.push('\u0283'); break;
-      case 'T': result.push('\u03B8'); break;
-      case 'U': result.push('\u028A'); break;
-      case 'V': result.push('\u028C'); break;
-      case 'W': result.push('\u028D'); break;
-      case 'X': result.push('\u03C7'); break;
-      case 'Y': result.push('\u028F'); break;
-      case 'Z': result.push('\u0292'); break;
-      default: result.push(input.substr(i,1)); break;
-    }
-  }
-  return result.join('');
-}
+  return tokens.join('');
+};
