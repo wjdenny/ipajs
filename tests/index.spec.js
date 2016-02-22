@@ -44,34 +44,34 @@ describe('ipa.js', function () {
     expect(ipa('abcdefghijklmnopqrstuvwxyz')).to.equal('abcdefghijklmnopqrstuvwxyz');
   });
 
-  // it('should transform capital letters accurately', function () {
-  //   expect(ipa('A')).to.equal('ɑ');
-  //   expect(ipa('B')).to.equal('β');
-  //   expect(ipa('C')).to.equal('ç');
-  //   expect(ipa('D')).to.equal('ð');
-  //   expect(ipa('E')).to.equal('ɛ');
-  //   expect(ipa('F')).to.equal('ɱ');
-  //   expect(ipa('G')).to.equal('ɣ');
-  //   expect(ipa('H')).to.equal('ɥ');
-  //   expect(ipa('I')).to.equal('ɪ');
-  //   expect(ipa('J')).to.equal('ɲ');
-  //   expect(ipa('K')).to.equal('ɬ');
-  //   expect(ipa('L')).to.equal('ʎ');
-  //   expect(ipa('M')).to.equal('ɯ');
-  //   expect(ipa('N')).to.equal('ŋ');
-  //   expect(ipa('O')).to.equal('ɔ');
-  //   expect(ipa('P')).to.equal('ʋ');
-  //   expect(ipa('Q')).to.equal('ɒ');
-  //   expect(ipa('R')).to.equal('ʁ');
-  //   expect(ipa('S')).to.equal('ʃ');
-  //   expect(ipa('T')).to.equal('θ');
-  //   expect(ipa('U')).to.equal('ʊ');
-  //   expect(ipa('V')).to.equal('ʌ');
-  //   expect(ipa('W')).to.equal('ʍ');
-  //   expect(ipa('X')).to.equal('χ');
-  //   expect(ipa('Y')).to.equal('ʏ');
-  //   expect(ipa('Z')).to.equal('ʒ');
-  // });
+  it('should transform capital letters accurately', function () {
+    expect(ipa('A')).to.equal('ɑ');
+    expect(ipa('B')).to.equal('β');
+    expect(ipa('C')).to.equal('ç');
+    expect(ipa('D')).to.equal('ð');
+    expect(ipa('E')).to.equal('ɛ');
+    expect(ipa('F')).to.equal('ɱ');
+    expect(ipa('G')).to.equal('ɣ');
+    expect(ipa('H')).to.equal('ɥ');
+    expect(ipa('I')).to.equal('ɪ');
+    expect(ipa('J')).to.equal('ɲ');
+    expect(ipa('K')).to.equal('ɬ');
+    expect(ipa('L')).to.equal('ʎ');
+    expect(ipa('M')).to.equal('ɯ');
+    expect(ipa('N')).to.equal('ŋ');
+    expect(ipa('O')).to.equal('ɔ');
+    expect(ipa('P')).to.equal('ʋ');
+    expect(ipa('Q')).to.equal('ɒ');
+    expect(ipa('R')).to.equal('ʁ');
+    expect(ipa('S')).to.equal('ʃ');
+    expect(ipa('T')).to.equal('θ');
+    expect(ipa('U')).to.equal('ʊ');
+    expect(ipa('V')).to.equal('ʌ');
+    expect(ipa('W')).to.equal('ʍ');
+    expect(ipa('X')).to.equal('χ');
+    expect(ipa('Y')).to.equal('ʏ');
+    expect(ipa('Z')).to.equal('ʒ');
+  });
 
   // it('should transform modified capital letters accurately', function () {
   //   expect(ipa('B\\')).to.equal('ʙ');
