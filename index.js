@@ -85,7 +85,47 @@ const xsMap = {
   'w': 'w', 
   'x': 'x', 
   'y': 'y', 
-  'z': 'z'
+  'z': 'z',
+  '.': '.',
+  '"': '\u02C8',
+  '%': '\u02CC',
+  '_j': '\u02B2',
+  '\'': '\u02B2',
+  ':': '\u02D0',
+  ':\\': '\u02D1',
+  'tS': 't\u0361\u0283',
+  '@': '\u0259',
+  '@\\': '\u0258',
+  '@`': '\u025A',
+  '{': '\u00E6',
+  '}': '\u0289',
+  '1': '\u0268',
+  '2': '\u00F8',
+  '3': '\u025C',
+  '3\\': '\u025E',
+  '4': '\u027E',
+  '5': '\u026B',
+  '6': '\u0250',
+  '7': '\u0264',
+  '8': '\u0275',
+  '9': '\u0153',
+  '&': '\u0276',
+  '?': '\u0294',
+  '?\\': '\u0295',
+  '<\\': '\u02A2',
+  '>\\': '\u02A1',
+  '^': '\u2191',
+  '!': '\u2193',
+  '!\\': '\u01C3',
+  '|': '|',
+  '|\\': '\u01C0',
+  '||': '‖',
+  '|\\|\\': '\u01C1',
+  '=\\': '\u01C2',
+  '-\\': '\u203F',
+  ' ': ' ',
+  '\t': '\t'
+
 }
 
 const maxLen = Object.keys(xsMap).reduce((maxLen, key) => {
@@ -104,7 +144,9 @@ export function createIpaDecoder() {
     let unicode = '';
 
     for (let i = 0; i < string.length; i++) {
-      for (let j = maxLen; j > 0; j--) {
+      for (let j = Math.min(string.length, maxLen); j > 0; j--) {
+
+        // If `i + j` exceeds the string length, skip this pass.
         if (string.length < i + j) {
           continue;
         }
@@ -114,6 +156,7 @@ export function createIpaDecoder() {
         if (xsMap[substr]) {
           unicode += xsMap[substr];
           i = i + j - 1;
+          break;
         }
       }
     }
