@@ -34,22 +34,22 @@ describe(`returned decoder function`, () => {
     );
   });
 
-  it('should transform modified capital letters accurately', function () {
+  it('should return correct values for modified capital letters', function () {
     assert.equal(
       ipa('B\\G\\G\\_<H\\I\\J\\J\\_<K\\L\\M\\N\\O\\R\\U\\X\\'),
       'ʙɢʛʜᵻɟʄɮʟɰɴʘʀᵿħ'
     );
   });
 
-  it('should transform modified lowercase letters accurately', function () {
+  it('should return correct values for modified lowercase letters', function () {
     assert.equal(
       ipa('b_<d`d_<g_<h\\j\\l`l\\n`p\\r`r\\r\\`s`s\\t`v\\x\\z`z\\'),
       'ɓɖɗɠɦʝɭɺɳɸɽɹɻʂɕʈʋɧʐʑ'
     );
   });
 
-  it('should transform numbers and symbols accurately');
-  it('should transform modified numbers and symbols accurately');
+  it('should return correct values for numbers and symbols');
+  it('should return correct values for modified numbers and symbols');
   it('should throw exception on non-sensical modifier');
   it('should treat underscore as an IPA tiebar');
 })
