@@ -110,10 +110,8 @@ export function createIpaDecoder() {
         }
 
         const substr = string.slice(i, i+j);
-        console.log(`${i},${j} = ${substr}`);
 
         if (xsMap[substr]) {
-          console.log(`match at ${i},${j} for ${substr} = ${xsMap[substr]}`);
           unicode += xsMap[substr];
           i = i + j - 1;
         }
