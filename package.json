@@ -1,6 +1,6 @@
 {
   "name": "ipajs",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Transforms X-SAMPA notation into Unicode IPA characters",
   "main": "index.js",
   "type": "module",
