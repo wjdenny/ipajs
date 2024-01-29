@@ -161,6 +161,6 @@ describe(`returned decoder function`, () => {
   });
 
   it('should return correct values for modified numbers and symbols');
-  it('should throw exception on non-sensical modifier');
+  it('should fall back to returning unknown characters as-is');
   it('should treat underscore as an IPA tiebar');
 })
