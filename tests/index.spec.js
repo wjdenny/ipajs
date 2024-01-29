@@ -1,20 +1,20 @@
 import { expect, assert } from 'chai';
-import { createSampaDecoder } from '../index.js'
+import { createIpaDecoder } from '../index.js'
 
-describe(`createSampaDecoder()`, () => {
+describe(`createIpaDecoder()`, () => {
   it(`should be a function`, () => {
-    assert.typeOf(createSampaDecoder, 'function');
+    assert.typeOf(createIpaDecoder, 'function');
   });
 
   it(`should return a function`, () => {
-    const ipa = createSampaDecoder();
+    const ipa = createIpaDecoder();
 
     assert.typeOf(ipa, 'function');
   });
 })
 
 describe(`returned decoder function`, () => {
-  const ipa = createSampaDecoder();
+  const ipa = createIpaDecoder();
 
   it(`should return a string`, () => {
     assert.typeOf(ipa(), 'string');

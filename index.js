@@ -93,8 +93,8 @@ const maxLen = Object.keys(xsMap).reduce((maxLen, key) => {
 }, 1);
 
 
-export function createSampaDecoder() {
-  return function sampaDecoder(string = "") {
+export function createIpaDecoder() {
+  return function ipaDecoder(string = "") {
     string = typeof string === "string" ? string : string.toString();
 
     if (string === "") { 
