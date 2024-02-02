@@ -1,5 +1,5 @@
 {
-  "name": "ipajs",
+  "name": "@wjdenny/ipajs",
   "version": "0.0.1",
   "description": "Transforms X-SAMPA notation into Unicode IPA characters",
   "main": "index.js",
